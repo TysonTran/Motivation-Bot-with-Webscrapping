@@ -16,7 +16,7 @@ def get_quotes(links):
     authors = []
     for i in links:
         r = requests.get(i)
-        soup = bs4.BeautifulSoup(r.text)
+        soup = bs4.BeautifulSoup(r.text, 'html.parser')
         quote = [x.text.strip() for x in soup.find('div', attrs={'id':'qbc1'}).find_all('a', attrs={'title':'view quote'}) if x.text.strip()]
         quotes = quotes + quote
         author =[x.text for x in soup.find('div', attrs={'id':'qbc1'}).find_all('a', attrs={'title':'view author'})]
