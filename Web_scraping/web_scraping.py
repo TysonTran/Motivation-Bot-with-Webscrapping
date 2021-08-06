@@ -24,4 +24,4 @@ def get_quotes(links):
     pd.DataFrame({'quotes':quotes, 'authors':authors}).to_csv('motivation.csv', index=False)
     return None
 
-get_quotes(get_links(1,5, 'https://www.brainyquote.com/topics/motivational-quotes'))
+get_quotes(get_links(1,8, 'https://www.brainyquote.com/topics/inspirational-quotes'))
