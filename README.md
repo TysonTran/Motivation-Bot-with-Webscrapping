@@ -11,3 +11,10 @@ Wisdom Bot uses webscraped quotes from brainyquote and randomly generates one wh
 2. The bot automatically responds to variations of morning greetings on discord and provides a randomly generated quote for the individul to start off the day
 
 ![Morning Variations](images/morning_respond.png)
+
+### Packages Used
+
+1. Requests: Used to get the information from brainyquote
+2. Beautiful Soup: Used to look through the information that we requested and parse through the HTML to extract the wisdom quotes that we were looking for 
+3. Pandas: Organized the quotes into a dataframe with two columns: quotes and authors. Also used to randomly generate a quote from the dataframe
+4. Discord: Allows us to read messages that are being sent through the channel to look for keywords and respond to those keywords with randomly generated quotes from the dataframe
