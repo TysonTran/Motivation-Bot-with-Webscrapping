@@ -1,2 +1,3 @@
 language = "python3"
+#run = "python Web_scraping/web_scraping.py"
 run = "python quote_bot.py"

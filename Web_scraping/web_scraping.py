@@ -11,7 +11,7 @@ def get_links(start, end, base_link):
             lst_links.append(base_link + '_' + str(i))
     return lst_links
 
-def get_quotes(links):
+def get_quotes(links, topic):
     quotes = []
     authors = []
     for i in links:
@@ -21,7 +21,9 @@ def get_quotes(links):
         quotes = quotes + quote
         author =[x.text for x in soup.find('div', attrs={'id':'qbc1'}).find_all('a', attrs={'title':'view author'})]
         authors = authors + author
-    pd.DataFrame({'quotes':quotes, 'authors':authors}).to_csv('motivation.csv', index=False)
+    pd.DataFrame({'quotes':quotes, 'authors':authors}).to_csv(topic+'.csv', index=False)
     return None
 
-get_quotes(get_links(1,8, 'https://www.brainyquote.com/topics/inspirational-quotes'))
+# get_quotes(get_links(1,8, 'https://www.brainyquote.com/topics/inspirational-quotes'), 'inspire')
+
+get_quotes(get_links(1,17, 'https://www.brainyquote.com/topics/wisdom-quotes'), 'wisdom')
